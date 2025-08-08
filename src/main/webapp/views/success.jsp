@@ -6,6 +6,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title></title>
+<script type="text/javascript">
+	function deleteData()
+	{
+		alert('!........You Are Delete Record........!')
+		document.myForm.action="delete";
+		document.myForm.submit();
+	}
+	
+	function editData()
+	{
+		alert('!........You Are Edit Record........!')
+		document.myForm.action="edit";
+		document.myForm.submit();
+	}	
+</script>
+
 <style>
 body {
 	background-image:
@@ -85,6 +102,8 @@ body {
             <th>USERNAME</th>
             <th>PASSWORD</th>
         </tr>
+        <form name="myForm" method="post" action="delete">
+        <form name="myForm" method="post" action="edit">
         <tbody>
 				<%
 					for (Employee emp : list) {
@@ -116,8 +135,9 @@ body {
            </table>
 
     <div class="btn-container">
-        <button class="btn edit-btn">EDIT</button>
-        <button class="btn delete-btn">DELETE</button>
+        <button class="btn edit-btn" onclick="editData()">EDIT</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn delete-btn" onclick="deleteData()">DELETE</button>
     </div>
 
 </body>
