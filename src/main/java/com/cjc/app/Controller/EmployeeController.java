@@ -58,11 +58,11 @@ public class EmployeeController {
 		return "index";
 	}
 	@RequestMapping(value = "/delete")
-	public String handleDeleteRequest(@RequestParam String name,ModelMap modelmap)
+	public String handleDeleteRequest(@RequestParam int eid,ModelMap modelmap)
 	{
-		System.out.println("Employee Name : "+name);
+		System.out.println("EID : "+eid);
 		
-		employeeservice.deleteEmployee(name);
+		employeeservice.deleteEmployee(eid);
 		
 		List<Employee> list = employeeservice.getemployees();
 		
