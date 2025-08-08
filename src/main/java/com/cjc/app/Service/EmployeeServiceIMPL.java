@@ -28,6 +28,12 @@ public class EmployeeServiceIMPL implements EmployeeService
 		List<Employee> list = employeeRepository.findAll();
 		return list;
 	}
+
+	@Override
+		public void deleteEmployee(String name) {
+			
+			employeerepository.deleteById(name);
+		}
 	
 	
 }
