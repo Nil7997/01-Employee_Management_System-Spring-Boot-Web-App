@@ -57,4 +57,17 @@ public class EmployeeController {
 		
 		return "index";
 	}
+	@RequestMapping(value = "/delete")
+	public String handleDeleteRequest(@RequestParam String name,ModelMap modelmap)
+	{
+		System.out.println("Employee Name : "+name);
+		
+		employeeservice.deleteEmployee(name);
+		
+		List<Employee> list = employeeservice.getemployees();
+		
+		modelmap.addAttribute("Data", list);
+		
+		return "success";		
+	}
 }
