@@ -29,11 +29,17 @@ public class EmployeeServiceIMPL implements EmployeeService
 		return list;
 	}
 
+	public void deleteEmployee(int eid) {
+		
+		employeeRepository.deleteById(eid);
+	}
+
 	@Override
-		public void deleteEmployee(String name) {
-			
-			employeerepository.deleteById(name);
-		}
+	public Employee getEmployee(int eid) {
+		
+		return employeeRepository.findById(eid).get();
+	}
+
 	
 	
 }
