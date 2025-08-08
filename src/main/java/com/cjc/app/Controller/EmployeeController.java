@@ -70,4 +70,17 @@ public class EmployeeController {
 		
 		return "success";		
 	}
+
+	@PostMapping("/edit")
+	@RequestMapping(value = "/edit")
+	public ModelAndView handleEditREquest(@RequestParam int eid)
+	{
+		Employee employee = employeeservice.getEmployee(eid);
+		
+		ModelAndView m =new ModelAndView();
+		m.setViewName("update");
+		m.addObject("emp", employee);
+		
+		return m;
+
 }
