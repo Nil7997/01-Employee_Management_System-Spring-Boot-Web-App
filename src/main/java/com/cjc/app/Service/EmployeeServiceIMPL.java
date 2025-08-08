@@ -1,7 +1,5 @@
 package com.cjc.app.Service;
 
-
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +9,7 @@ import com.cjc.app.Model.Employee;
 import com.cjc.app.Repository.EmployeeRepository;
 
 @Service
-public class EmployeeServiceIMPL implements EmployeeService
-{
+public class EmployeeServiceIMPL implements EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
@@ -20,7 +17,7 @@ public class EmployeeServiceIMPL implements EmployeeService
 	@Override
 	public void saveEmployee(Employee emp) {
 		employeeRepository.save(emp);
-		
+
 	}
 
 	@Override
@@ -29,17 +26,17 @@ public class EmployeeServiceIMPL implements EmployeeService
 		return list;
 	}
 
+	@Override
 	public void deleteEmployee(int eid) {
-		
+
 		employeeRepository.deleteById(eid);
+		System.out.println("deleted record"+eid);
 	}
 
 	@Override
 	public Employee getEmployee(int eid) {
-		
+
 		return employeeRepository.findById(eid).get();
 	}
 
-	
-	
 }

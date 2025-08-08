@@ -6,6 +6,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+<script type="text/javascript">
+   
+   function editdata()
+   {
+	   alert('Editing this record')
+	   document.myform.action="edit";
+	   document.myform.submit();
+   }
+   
+   function deletedata()
+   {
+	   alert('Are you sure you want to delete this')
+	   document.myform.action="delete";
+	   document.myform.submit();
+   }
+   
+   </script>
+
 <title></title>
 <script type="text/javascript">
 	function deleteData()
@@ -23,6 +43,7 @@
 	}	
 </script>
 
+
 <style>
 body {
 	background-image:
@@ -32,56 +53,86 @@ body {
 	width: 100%;
 	height: 100vh;
 	padding: 30px;
-	margin:20px;
+	margin: 20px;
 }
- th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-                        opacity: 0.85;
-                        background-color: #f2f2f2;
-            
-        }
-        th {
-            background-color: #f2f2f2;
-                        opacity: 0.85;
-            
-        }
-        .btn-container {
-            margin-top: 15px;
-        }
-        .btn {
-            padding: 8px 15px;
-            margin: 5px;
-            border: none;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .edit-btn {
-            background-color: #4CAF50; /* Green */
-        }
-        .delete-btn {
-            background-color: #f44336; /* Red */
-        }
-        .btn,th,tr,td:hover{
-            opacity: 0.85;
-        }
-        
-                .edit-btn {
-            background-color: #4CAF50; /* Green */
-        }
-        .delete-btn {
-            background-color: #f44336; /* Red */
-        }
-        .btn:hover,th,td ,tr{
-            opacity: 0.85;
-        }
-        
-    </style>
+
+th, td {
+	border: 1px solid #000;
+	padding: 8px;
+	text-align: center;
+	opacity: 0.85;
+	background-color: #f2f2f2;
+}
+
+th {
+	background-color: #f2f2f2;
+	opacity: 0.85;
+}
+
+.btn-container {
+	margin-top: 15px;
+}
+
+.btn {
+	padding: 8px 15px;
+	margin: 5px;
+	border: none;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.edit-btn {
+	background-color: #4CAF50; /* Green */
+}
+
+.delete-btn {
+	background-color: #f44336; /* Red */
+}
+
+.btn, th, tr, td:hover {
+	opacity: 0.85;
+}
+
+.edit-btn {
+	background-color: #4CAF50; /* Green */
+}
+
+.delete-btn {
+	background-color: #f44336; /* Red */
+}
+
+.btn:hover, th, td, tr {
+	opacity: 0.85;
+}
+</style>
 </head>
 <body>
+
+	<h2>---EMPLOYEE DATA---</h2>
+
+	<form name="myform">
+
+		<%
+			List<Employee> list = (List<Employee>) request.getAttribute("data");
+		%>
+		<table>
+			<tr>
+				<th>SELECT</th>
+				<th>Eid</th>
+				<th>Full Name</th>
+				<th>Designation</th>
+				<th>Salary</th>
+				<th>BirthDate</th>
+				<th>Gender</th>
+				<th>Email id</th>
+				<th>Mobile no.</th>
+				<th>USERNAME</th>
+				<th>PASSWORD</th>
+			</tr>
+			<tbody>
+
     <h2>---EMPLOYEE DATA---</h2>
 
           
@@ -105,6 +156,7 @@ body {
         <form name="myForm" method="post" action="delete">
         <form name="myForm" method="post" action="edit">
         <tbody>
+
 				<%
 					for (Employee emp : list) {
 				%>
@@ -130,6 +182,18 @@ body {
 				%>
 
 			</tbody>
+
+
+		</table>
+
+		<div class="btn-container">
+			<button class="btn edit-btn" onclick="editdata()">EDIT</button>
+			<button class="btn delete-btn" onclick="deletedata()">DELETE</button>
+		</div>
+
+	</form>
+
+
         
         
            </table>
@@ -139,6 +203,7 @@ body {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn delete-btn" onclick="deleteData()">DELETE</button>
     </div>
+
 
 </body>
 
