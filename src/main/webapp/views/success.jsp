@@ -6,26 +6,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-<script type="text/javascript">
-   
-   function editdata()
-   {
-	   alert('Editing this record')
-	   document.myform.action="edit";
-	   document.myform.submit();
-   }
-   
-   function deletedata()
-   {
-	   alert('Are you sure you want to delete this')
-	   document.myform.action="delete";
-	   document.myform.submit();
-   }
-   
-   </script>
-
 <title></title>
 <script type="text/javascript">
 	function deleteData()
@@ -113,28 +93,6 @@ th {
 	<h2>---EMPLOYEE DATA---</h2>
 
 	<form name="myform">
-
-		<%
-			List<Employee> list = (List<Employee>) request.getAttribute("data");
-		%>
-		<table>
-			<tr>
-				<th>SELECT</th>
-				<th>Eid</th>
-				<th>Full Name</th>
-				<th>Designation</th>
-				<th>Salary</th>
-				<th>BirthDate</th>
-				<th>Gender</th>
-				<th>Email id</th>
-				<th>Mobile no.</th>
-				<th>USERNAME</th>
-				<th>PASSWORD</th>
-			</tr>
-			<tbody>
-
-    <h2>---EMPLOYEE DATA---</h2>
-
           
            	<%
 		List<Employee> list = (List<Employee>) request.getAttribute("data");
@@ -153,8 +111,7 @@ th {
             <th>USERNAME</th>
             <th>PASSWORD</th>
         </tr>
-        <form name="myForm" method="post" action="delete">
-        <form name="myForm" method="post" action="edit">
+     
         <tbody>
 
 				<%
@@ -196,14 +153,9 @@ th {
 
         
         
-           </table>
+           <
 
-    <div class="btn-container">
-        <button class="btn edit-btn" onclick="editData()">EDIT</button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="btn delete-btn" onclick="deleteData()">DELETE</button>
-    </div>
-
+   
 
 </body>
 
