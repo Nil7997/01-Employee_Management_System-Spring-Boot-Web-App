@@ -25,7 +25,8 @@
 
 
 <style>
-body {
+body 
+{
 	background-image:
 		url(https://img.freepik.com/free-photo/flat-lay-stationary-arrangement-desk-with-copy-space-coffee_23-2148404490.jpg);
 	background-repeat: no-repeat;
@@ -36,7 +37,8 @@ body {
 	margin: 20px;
 }
 
-th, td {
+th, td 
+{
 	border: 1px solid #000;
 	padding: 8px;
 	text-align: center;
@@ -44,16 +46,19 @@ th, td {
 	background-color: #f2f2f2;
 }
 
-th {
+th
+{
 	background-color: #f2f2f2;
 	opacity: 0.85;
 }
 
-.btn-container {
+.btn-container 
+{
 	margin-top: 15px;
 }
 
-.btn {
+.btn 
+{
 	padding: 8px 15px;
 	margin: 5px;
 	border: none;
@@ -63,27 +68,33 @@ th {
 	border-radius: 4px;
 }
 
-.edit-btn {
+.edit-btn 
+{
 	background-color: #4CAF50; /* Green */
 }
 
-.delete-btn {
+.delete-btn 
+{
 	background-color: #f44336; /* Red */
 }
 
-.btn, th, tr, td:hover {
+.btn, th, tr, td:hover 
+{
 	opacity: 0.85;
 }
 
-.edit-btn {
+.edit-btn 
+{
 	background-color: #4CAF50; /* Green */
 }
 
-.delete-btn {
+.delete-btn 
+{
 	background-color: #f44336; /* Red */
 }
 
-.btn:hover, th, td, tr {
+.btn:hover, th, td, tr 
+{
 	opacity: 0.85;
 }
 </style>
@@ -118,7 +129,6 @@ th {
 					for (Employee emp : list) {
 				%>
 
-
 				<tr>
 					<td><input type="radio" name="eid" value=<%=emp.getEid()%>></td>
 					<td><%=emp.getEid()%></td>
@@ -131,16 +141,11 @@ th {
 					<td><%=emp.getMobileNo()%></td>
 					<td><%=emp.getUserName()%></td>
 					<td><%=emp.getPassword()%></td>
-
 				</tr>
-
 				<%
 					}
 				%>
-
 			</tbody>
-
-
 		</table>
 
 		<div class="btn-container">
@@ -148,14 +153,7 @@ th {
 			<button class="btn delete-btn" onclick="deletedata()">DELETE</button>
 		</div>
 
-	</form>
-
-
-        
-        
-           <
-
-   
+	</form>  
 
 </body>
 
