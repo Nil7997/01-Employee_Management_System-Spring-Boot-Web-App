@@ -103,9 +103,9 @@ th
 
 	<h2>---EMPLOYEE DATA---</h2>
 
-	<form name="myform">
+	<form name="myForm">
           
-           	<%
+    <%
 		List<Employee> list = (List<Employee>) request.getAttribute("data");
 	%>
     <table>
@@ -149,8 +149,8 @@ th
 		</table>
 
 		<div class="btn-container">
-			<button class="btn edit-btn" onclick="editdata()">EDIT</button>
-			<button class="btn delete-btn" onclick="deletedata()">DELETE</button>
+			<button class="btn edit-btn" onclick="editData()">EDIT</button>
+			<button class="btn delete-btn" onclick="deleteData()">DELETE</button>
 		</div>
 
 	</form>  
